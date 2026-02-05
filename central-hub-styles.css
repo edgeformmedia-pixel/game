@@ -1,0 +1,562 @@
+/* ============================================================
+   CENTRAL TAB - FIFA CAREER MODE HUB STYLING
+   ============================================================ */
+
+#tab-central {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Top Section - Advance Calendar & News */
+.central-top-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px;
+    height: 280px;
+}
+
+/* Advance Calendar Panel */
+.advance-panel {
+    background: rgba(15, 20, 30, 0.92);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 217, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.advance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.advance-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #ffd900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.advance-date {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Calendar Week */
+.calendar-week {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    flex: 1;
+}
+
+.calendar-day {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.calendar-day.active {
+    background: rgba(139, 0, 0, 0.4);
+    border-color: rgba(139, 0, 0, 0.6);
+}
+
+.calendar-day.match-day {
+    background: rgba(255, 217, 0, 0.15);
+    border-color: rgba(255, 217, 0, 0.4);
+}
+
+.calendar-day:hover {
+    background: rgba(255, 217, 0, 0.1);
+    border-color: rgba(255, 217, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.day-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.day-number {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.day-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin-top: auto;
+}
+
+.day-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.match-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background: #ffd900;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 217, 0, 0.8);
+}
+
+/* News Highlight Panel */
+.news-highlight-panel {
+    background: rgba(15, 20, 30, 0.92);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 217, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.news-highlight-panel:hover {
+    border-color: rgba(255, 217, 0, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.news-content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 217, 0, 0.15), rgba(255, 180, 0, 0.05));
+}
+
+.news-headline {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+.news-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.news-image {
+    width: 220px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-pagination {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.news-dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.news-dot.active {
+    background: #000;
+    transform: scale(1.3);
+}
+
+/* Bottom Section - Transfer Network & News/Tables */
+.central-bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px;
+    height: 340px;
+}
+
+/* Global Transfer Network Panel */
+.transfer-network-panel {
+    background: rgba(15, 20, 30, 0.92);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.transfer-network-header {
+    margin-bottom: 15px;
+}
+
+.transfer-network-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.transfer-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.transfer-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.transfer-stat-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.transfer-stat-value {
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Transfer Player Card */
+.transfer-player-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.transfer-player-card:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.transfer-player-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.transfer-player-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transfer-player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transfer-player-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.transfer-player-position {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.transfer-player-clubs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.transfer-club-badge {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.transfer-club-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.transfer-arrow {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.transfer-player-flags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.transfer-flag {
+    width: 35px;
+    height: 25px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transfer-flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Side - News & Tables Split */
+.news-tables-split {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* News Feed */
+.news-feed-panel {
+    background: rgba(15, 20, 30, 0.92);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 217, 0, 0.2);
+    border-radius: 8px;
+    padding: 18px;
+    flex: 1;
+}
+
+.news-feed-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.news-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.news-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid transparent;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    background: rgba(255, 217, 0, 0.1);
+    border-left-color: #ffd900;
+    transform: translateX(3px);
+}
+
+.news-item.transfer {
+    border-left-color: rgba(255, 50, 100, 0.6);
+}
+
+.news-item.match {
+    border-left-color: rgba(0, 150, 255, 0.6);
+}
+
+.news-item.general {
+    border-left-color: rgba(0, 200, 100, 0.6);
+}
+
+/* League Table Preview */
+.table-preview-panel {
+    background: rgba(15, 20, 30, 0.92);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    padding: 18px;
+    flex: 1;
+}
+
+.table-preview-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.table-preview-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 35px 30px 1fr 50px 50px;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.table-row:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateX(3px);
+}
+
+.table-row.user-team {
+    background: rgba(255, 217, 0, 0.15);
+    border: 1px solid rgba(255, 217, 0, 0.3);
+}
+
+.table-position {
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.table-badge {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.table-team-name {
+    font-weight: 700;
+    color: #fff;
+}
+
+.table-stat {
+    text-align: center;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.table-stat.pld {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.table-stat.pts {
+    color: #ffd900;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .central-top-section,
+    .central-bottom-section {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .calendar-week {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .news-image {
+        width: 180px;
+    }
+}

@@ -11,6 +11,7 @@
     <!-- Glass Morphism Styles -->
     <link rel="stylesheet" href="style-complete-glass.css">
     <link rel="stylesheet" href="formation-styles-glass.css">
+    <link rel="stylesheet" href="central-hub-styles.css">
     
     <style>
         /* Additional inline styles for compatibility */
@@ -103,9 +104,97 @@
     </div>
 
     <!-- Central Tab -->
+    <!-- CENTRAL TAB HTML STRUCTURE -->
+    <!-- Replace the content inside <div id="tab-central" class="tab-content active"> -->
+
     <div id="tab-central" class="tab-content active">
-        <h2>Career Hub</h2>
-        <div id="centralContent"></div>
+        
+        <!-- Top Section: Advance Calendar + News Highlight -->
+        <div class="central-top-section">
+            
+            <!-- Advance Calendar -->
+            <div class="advance-panel">
+                <div class="advance-header">
+                    <div class="advance-title">ADVANCE</div>
+                    <div class="advance-date" id="advanceDate">AUG 2014</div>
+                </div>
+                
+                <div class="calendar-week" id="calendarWeek">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- News Highlight -->
+            <div class="news-highlight-panel" id="newsHighlight" onclick="showTab('news')">
+                <div class="news-content">
+                    <div class="news-headline" id="highlightHeadline">
+                        Loading news...
+                    </div>
+                    <div class="news-meta">
+                        <div class="news-date" id="highlightDate">Today</div>
+                        <div class="news-action">
+                            <span>Z</span>
+                            <span>View Story</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-image" id="highlightImage">
+                    <div style="font-size:3rem;color:rgba(255,255,255,0.3);">📰</div>
+                </div>
+                <div class="news-pagination" id="newsPagination">
+                    <!-- Dots will be populated dynamically -->
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Bottom Section: Transfer Network + News/Tables -->
+        <div class="central-bottom-section">
+            
+            <!-- Global Transfer Network -->
+            <div class="transfer-network-panel">
+                <div class="transfer-network-header">
+                    <div class="transfer-network-title">GLOBAL TRANSFER NETWORK</div>
+                    <div class="transfer-stats">
+                        <div class="transfer-stat">
+                            <span class="transfer-stat-icon">↑</span>
+                            <span><span class="transfer-stat-value" id="newTransfers">11</span> New</span>
+                        </div>
+                        <div class="transfer-stat">
+                            <span class="transfer-stat-icon">↻</span>
+                            <span><span class="transfer-stat-value" id="updatedTransfers">0</span> Updates</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="transferNetworkList">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- News & Tables Split -->
+            <div class="news-tables-split">
+                
+                <!-- News Feed -->
+                <div class="news-feed-panel">
+                    <div class="news-feed-title">NEWS</div>
+                    <div class="news-feed-list" id="newsFeedList">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- League Table Preview -->
+                <div class="table-preview-panel">
+                    <div class="table-preview-title">TABLES</div>
+                    <div class="table-preview-list" id="tablePreviewList">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
     </div>
 
     <!-- Squad Tab -->
@@ -194,6 +283,7 @@
 <script src="matches.js"></script>
 <script src="transfers.js"></script>
 <script src="office.js"></script>
+<script src="central-hub.js"></script>
 
 </body>
 </html>
